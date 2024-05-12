@@ -4,7 +4,9 @@ import 'package:chat_app/pages/login_page.dart';
 import 'home_page.dart';
 
 class AuthPage extends StatelessWidget {
-  const AuthPage({super.key});
+   AuthPage({super.key,});
+
+  final GlobalKey<ScaffoldState> _homePageKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
@@ -12,15 +14,11 @@ class AuthPage extends StatelessWidget {
       body: StreamBuilder<User?>(
         stream: FirebaseAuth.instance.authStateChanges(),
         builder: (context, snapshot) {
-          // user is logged in
-          if (snapshot.hasData) {
-            return HomePage();
-          }
-
-          // user is NOT logged in
-          else {
+          // if (snapshot.hasData) {
+          //   return HomePage(scaffoldKey: _homePageKey);
+          // } else {
             return LoginPage();
-          }
+          // }
         },
       ),
     );
