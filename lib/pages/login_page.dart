@@ -122,7 +122,7 @@ class _LoginPageState extends State<LoginPage> {
         context: context,
         builder: (context) {
           return AlertDialog(
-            backgroundColor: Colors.deepPurple,
+            backgroundColor: Colors.black,
             title: const Center(
               child: Text(
                 'Password Reset Email Sent',
@@ -141,7 +141,7 @@ class _LoginPageState extends State<LoginPage> {
         context: context,
         builder: (context) {
           return AlertDialog(
-            backgroundColor: Colors.deepPurple,
+            backgroundColor: Colors.black,
             title: const Center(
               child: Text(
                 'Error Sending Password Reset Email',
@@ -192,7 +192,7 @@ class _LoginPageState extends State<LoginPage> {
                         text: 'AR',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,  // Make text bold
-                          color: Colors.blue,
+                          color: Colors.red,
                           fontSize: 20,// Make text blue
                         ),
                       ),
@@ -314,7 +314,7 @@ class _LoginPageState extends State<LoginPage> {
                       Text(
                         'Register Now',
                         style: TextStyle(
-                          color: Colors.blue,
+                          color: Colors.red,
                           fontWeight: FontWeight.bold,
                         ),
                       ),

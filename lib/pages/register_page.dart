@@ -174,7 +174,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       Text(
                         'Sign In',
                         style: TextStyle(
-                          color: Colors.blue,
+                          color: Colors.red,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
