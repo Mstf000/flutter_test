@@ -52,47 +52,51 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     final username = getUsername();
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.brown.shade400,
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.brown.shade800,
         elevation: 0,
         leading: Builder(
           builder: (context) => IconButton(
-            icon: const Icon(Icons.menu, color: Colors.black),
+            icon: const Icon(Icons.menu, color: Colors.white),
             onPressed: () => Scaffold.of(context).openDrawer(),
           ),
         ),
-        title: const Text('BraveSpeakAR', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),
+        title: const Text('BraveSpeakAR', style: TextStyle(color: Colors.green, fontWeight: FontWeight.bold)),
       ),
       drawer: Drawer(
+        backgroundColor: Colors.brown.shade400,
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
             UserAccountsDrawerHeader(
-              accountName: Text("Welcome, $username", style: TextStyle(fontSize: 24)),
-              accountEmail: Text(FirebaseAuth.instance.currentUser?.email ?? ''),
+              decoration: BoxDecoration(
+                color: Colors.brown.shade800,
+              ),
+              accountName: Text("Welcome, $username", style: TextStyle(fontSize: 24, color: Colors.green)),
+              accountEmail: Text(FirebaseAuth.instance.currentUser?.email ?? '', style: TextStyle(color: Colors.green),),
               // currentAccountPicture: CircleAvatar(
               //   child: const Icon(Icons.face, size: 40.0),
               //   backgroundColor: Colors.white,
               // ),
             ),
             ListTile(
-              leading: const Icon(Icons.account_box),
-              title: const Text('Account Settings'),
+              leading: const Icon(Icons.account_box, color: Colors.black,),
+              title: const Text('Account Settings', style: TextStyle(color: Colors.black),),
               onTap: () {
                 // Handle Settings Navigation
               },
             ),
             ListTile(
-              leading: const Icon(Icons.settings),
-              title: const Text('Options'),
+              leading: const Icon(Icons.settings, color: Colors.black,),
+              title: const Text('Options',style: TextStyle(color: Colors.black)),
               onTap: () {
                 // Handle Options Navigation
               },
             ),
             ListTile(
-              leading: const Icon(Icons.exit_to_app),
-              title: const Text('Logout'),
+              leading: const Icon(Icons.exit_to_app, color: Colors.black,),
+              title: const Text('Logout',style: TextStyle(color: Colors.black)),
               onTap: () => signUserOut(context),
             ),
           ],
@@ -162,7 +166,7 @@ class HomePage extends StatelessWidget {
               const SizedBox(height: 20),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.green, // Use 'backgroundColor' instead of 'primary'
+                    backgroundColor: Colors.brown.shade800, // Use 'backgroundColor' instead of 'primary'
                     padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20),
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8) // Optional: if you want rounded corners
@@ -172,7 +176,7 @@ class HomePage extends StatelessWidget {
                     )
                 ),
                 onPressed: () => _showStartSessionDialog(context),
-                child: Text('START YOUR SESSION'),
+                child: Text('START YOUR SESSION', style: TextStyle(color: Colors.green),),
               ),
             ],
           ),

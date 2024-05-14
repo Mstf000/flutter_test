@@ -192,7 +192,7 @@ class _LoginPageState extends State<LoginPage> {
                         text: 'AR',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,  // Make text bold
-                          color: Colors.red,
+                          color: Colors.green,
                           fontSize: 20,// Make text blue
                         ),
                       ),
@@ -314,7 +314,7 @@ class _LoginPageState extends State<LoginPage> {
                       Text(
                         'Register Now',
                         style: TextStyle(
-                          color: Colors.red,
+                          color: Colors.green,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
